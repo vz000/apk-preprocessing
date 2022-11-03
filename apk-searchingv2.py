@@ -21,7 +21,7 @@ cleanList = []
 with open("download2.csv",'r') as read_obj:
     csv_reader = csv.reader(read_obj)
     for row in csv_reader:
-        apk_name = str(row[1])
+        apk_name = str(row[0])
         try:
             driver.get("https://apkpure.com/search?q="+apk_name)
             driver.implicitly_wait(5)
@@ -42,13 +42,13 @@ with open("download2.csv",'r') as read_obj:
                     driver.get(download_link.get_attribute("href"))
                     print("PASS")
                     print("Downloading....")
-                    cleanList.append([row[0],row[1]])
+                    cleanList.append([row[0]])
                 else:
-                    cleanList.append([row[0],'x'])
+                    cleanList.append(['x'])
             else:
                 print("FAILED")
                 print("APK not found.")
-                cleanList.append([row[0],'x'])
+                cleanList.append(['x'])
             time.sleep(5)
         except NoSuchElementException as e:
             print(noElement)

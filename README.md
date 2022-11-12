@@ -14,3 +14,5 @@ Run:
 python3 nameFormat.py
 python3 main.py # This one requires a personal API key.
 ```
+## Important
+This was part of a complete solution that can be found in https://github.com/vz000/RansomwareDetectionNSA-Android
